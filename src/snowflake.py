@@ -24,8 +24,7 @@ class SnowflakeIDGenerator:
                 f"Datacenter ID must be between 0 and {self.MAX_DATACENTER_ID}"
             )
         if machine_id > self.MAX_MACHINE_ID or machine_id < 0:
-            raise ValueError(
-                f"Machine ID must be between 0 and {self.MAX_MACHINE_ID}")
+            raise ValueError(f"Machine ID must be between 0 and {self.MAX_MACHINE_ID}")
 
         self.datacenter_id = datacenter_id
         self.machine_id = machine_id
@@ -48,14 +47,12 @@ class SnowflakeIDGenerator:
             timestamp = self._current_time_millis()
 
             if timestamp < self.last_timestamp:
-                raise Exception(
-                    "Clock moved backwards. Refusing to generate id!")
+                raise Exception("Clock moved backwards. Refusing to generate id!")
 
             if timestamp == self.last_timestamp:
                 self.sequence = (self.sequence + 1) & self.MAX_SEQUENCE
                 if self.sequence == 0:
-                    timestamp = self._wait_for_next_millis(
-                        self.last_timestamp)
+                    timestamp = self._wait_for_next_millis(self.last_timestamp)
             else:
                 self.sequence = 0
 
