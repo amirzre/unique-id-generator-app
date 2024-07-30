@@ -1,6 +1,6 @@
 import os
 
-from id_generator import SnowflakeIDGenerator
+from snowflake import SnowflakeIDGenerator
 
 if __name__ == "__main__":
     datacenter_id = os.environ.get("DATACENTER_ID", default=1)
