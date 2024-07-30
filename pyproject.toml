@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "unique-id-generator-app"
+version = "1.0.0"
+description = "A Unique ID Generator in Disteributed Systems."
+authors = ["Amir"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.3.2"
+flake8 = "^7.1.0"
+black = "^24.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+package-mode = false
