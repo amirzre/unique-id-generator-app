@@ -14,6 +14,7 @@ install:
 format:
 	$(POETRY_RUN) black $(SRC_DIRS)
 	$(POETRY_RUN) isort $(SRC_DIRS)
+	$(POETRY_RUN) flake8
 
 # 3. Run project tests using pytest
 test:
